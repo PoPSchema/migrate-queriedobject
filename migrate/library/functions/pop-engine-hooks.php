@@ -7,7 +7,7 @@ class PoP_QueriedObject_VarsHooks
     public function __construct()
     {
         HooksAPIFacade::getInstance()->addAction(
-            '\PoP\Engine\Engine_Vars:addVars', 
+            '\PoP\ComponentModel\Engine_Vars:addVars', 
             [$this, 'setQueriedObject'], 
             0, 
             1
@@ -21,7 +21,7 @@ class PoP_QueriedObject_VarsHooks
 
         // Allow to override the queried object, eg: by the AppShell
         list($queried_object, $queried_object_id) = HooksAPIFacade::getInstance()->applyFilters(
-            '\PoP\Engine\Engine_Vars:queried-object',
+            '\PoP\ComponentModel\Engine_Vars:queried-object',
             [
                 $cmsqueriedobjectrouting->getQueriedObject(), 
                 $cmsqueriedobjectrouting->getQueriedObjectId()

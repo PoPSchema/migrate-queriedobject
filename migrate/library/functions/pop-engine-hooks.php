@@ -12,6 +12,12 @@ class PoP_QueriedObject_VarsHooks
             0, 
             1
         );
+        HooksAPIFacade::getInstance()->addAction(
+            'PoP\ComponentModel\AbstractFieldValueResolver:safeVars', 
+            [$this, 'setSafeVars'], 
+            10,
+            1
+        );
     }
     
     public function setQueriedObject($vars_in_array)
@@ -30,6 +36,12 @@ class PoP_QueriedObject_VarsHooks
         
         $vars['routing-state']['queried-object'] = $queried_object;
         $vars['routing-state']['queried-object-id'] = $queried_object_id;
+    }
+    public function setSafeVars($vars_in_array)
+    {
+        // Remove the queried object
+        $safeVars = &$vars_in_array[0];
+        unset($safeVars['routing-state']['queried-object']);
     }
 }
 

@@ -9,8 +9,8 @@ trait Dataloader_SingleTrait
         return $vars['routing-state']['queried-object-id'];
     }
 
-    public function executeGetData(array $ids): array {
-    
+    public function executeGetData(array $ids): array
+    {
         $vars = \PoP\ComponentModel\Engine_Vars::getVars();
         return [$vars['routing-state']['queried-object']];
     }

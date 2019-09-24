@@ -13,7 +13,7 @@ class PoP_QueriedObject_VarsHooks
             1
         );
         HooksAPIFacade::getInstance()->addAction(
-            'PoP\ComponentModel\AbstractFieldValueResolver:safeVars', 
+            'PoP\ComponentModel\AbstractFieldResolver:safeVars', 
             [$this, 'setSafeVars'], 
             10,
             1

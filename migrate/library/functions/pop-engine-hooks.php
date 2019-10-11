@@ -1,25 +1,26 @@
 <?php
 namespace PoP\QueriedObject;
 use PoP\Hooks\Facades\HooksAPIFacade;
+use PoP\Engine\OperatorsFieldValueResolver;
 
 class PoP_QueriedObject_VarsHooks
 {
     public function __construct()
     {
         HooksAPIFacade::getInstance()->addAction(
-            '\PoP\ComponentModel\Engine_Vars:addVars', 
-            [$this, 'setQueriedObject'], 
-            0, 
+            '\PoP\ComponentModel\Engine_Vars:addVars',
+            [$this, 'setQueriedObject'],
+            0,
             1
         );
         HooksAPIFacade::getInstance()->addAction(
-            'PoP\ComponentModel\AbstractFieldResolver:safeVars', 
-            [$this, 'setSafeVars'], 
+            OperatorsFieldValueResolver::HOOK_SAFEVARS,
+            [$this, 'setSafeVars'],
             10,
             1
         );
     }
-    
+
     public function setQueriedObject($vars_in_array)
     {
         $vars = &$vars_in_array[0];
@@ -29,11 +30,11 @@ class PoP_QueriedObject_VarsHooks
         list($queried_object, $queried_object_id) = HooksAPIFacade::getInstance()->applyFilters(
             '\PoP\ComponentModel\Engine_Vars:queried-object',
             [
-                $cmsqueriedobjectrouting->getQueriedObject(), 
+                $cmsqueriedobjectrouting->getQueriedObject(),
                 $cmsqueriedobjectrouting->getQueriedObjectId()
             ]
         );
-        
+
         $vars['routing-state']['queried-object'] = $queried_object;
         $vars['routing-state']['queried-object-id'] = $queried_object_id;
     }

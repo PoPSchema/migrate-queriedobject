@@ -1,7 +1,7 @@
 <?php
 namespace PoP\QueriedObject;
 use PoP\Hooks\Facades\HooksAPIFacade;
-use PoP\Engine\FieldResolvers\OperatorFieldResolver;
+use PoP\Engine\FieldResolvers\OperatorGlobalFieldResolver;
 
 class PoP_QueriedObject_VarsHooks
 {
@@ -14,7 +14,7 @@ class PoP_QueriedObject_VarsHooks
             1
         );
         HooksAPIFacade::getInstance()->addAction(
-            OperatorFieldResolver::HOOK_SAFEVARS,
+            OperatorGlobalFieldResolver::HOOK_SAFEVARS,
             [$this, 'setSafeVars'],
             10,
             1

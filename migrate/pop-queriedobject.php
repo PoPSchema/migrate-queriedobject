@@ -6,7 +6,7 @@ Description: The foundation for a PoP Queried Object
 Plugin URI: https://getpop.org/
 Author: Leonardo Losoviz
 */
-namespace PoP\QueriedObject;
+namespace PoPSchema\QueriedObject;
 use PoP\Hooks\Facades\HooksAPIFacade;
 
 //-------------------------------------------------------------------------------------

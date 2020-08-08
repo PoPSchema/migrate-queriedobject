@@ -1,5 +1,5 @@
 <?php
-namespace PoP\QueriedObject;
+namespace PoPSchema\QueriedObject;
 
 interface CMSRoutingStateInterface
 {

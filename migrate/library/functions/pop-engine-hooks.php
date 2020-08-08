@@ -1,5 +1,5 @@
 <?php
-namespace PoP\QueriedObject;
+namespace PoPSchema\QueriedObject;
 use PoP\Hooks\Facades\HooksAPIFacade;
 use PoP\Engine\FieldResolvers\OperatorGlobalFieldResolver;
 

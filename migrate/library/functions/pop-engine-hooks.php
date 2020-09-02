@@ -21,7 +21,10 @@ class PoP_QueriedObject_VarsHooks
         );
     }
 
-    public function setQueriedObject($vars_in_array)
+    /**
+     * @param array<array> $vars_in_array
+     */
+    public function setQueriedObject(array $vars_in_array): void
     {
         $vars = &$vars_in_array[0];
         $cmsqueriedobjectrouting = CMSRoutingStateFactory::getInstance();
@@ -38,7 +41,11 @@ class PoP_QueriedObject_VarsHooks
         $vars['routing-state']['queried-object'] = $queried_object;
         $vars['routing-state']['queried-object-id'] = $queried_object_id;
     }
-    public function setSafeVars($vars_in_array)
+
+    /**
+     * @param array<array> $vars_in_array
+     */
+    public function setSafeVars(array $vars_in_array): void
     {
         // Remove the queried object
         $safeVars = &$vars_in_array[0];

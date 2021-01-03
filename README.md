@@ -1,6 +1,6 @@
 # (Temporary package) Migrate code to package: Queried object
 
-Code to be migrated, from legacy PHP 5 code to modern PHP 7 code ([read more here](https://github.com/leoloso/PoP#codebase-migration)). Target package description:  Adds support to query single objects (users, posts, etc) in the request
+Code to be migrated, from legacy to modern PHP code ([read more here](https://github.com/leoloso/PoP#codebase-migration)). Target package description:  Adds support to query single objects (users, posts, etc) in the request
 
 ## Install
 
@@ -9,6 +9,10 @@ Via Composer
 ``` bash
 composer require pop-schema/migrate-queriedobject
 ```
+
+## Development
+
+The source code is hosted on the [PoP monorepo](https://github.com/leoloso/PoP), under [`Schema/packages/migrate-queriedobject`](https://github.com/leoloso/PoP/tree/master/layers/Schema/packages/migrate-queriedobject).
 
 ## Security
 
@@ -36,4 +40,4 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-code-quality]: https://scrutinizer-ci.com/g/pop-schema/queriedobject
 [link-downloads]: https://packagist.org/packages/pop-schema/queriedobject
 [link-author]: https://github.com/leoloso
-[link-contributors]: ../../contributors
+[link-contributors]: ../../../../../../contributors
